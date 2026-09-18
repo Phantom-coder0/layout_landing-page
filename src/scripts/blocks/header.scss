@@ -1,55 +1,49 @@
 .header {
-  //display: none;
-  background-image: url('../images/header-bg.png');
+  background-image: url('/src/images/header-bg.png');
   background-size: cover;
   background-position: center;
 
-
-
   &__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
+    box-sizing: border-box;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  &__waves {
-  height: 57px;
-  width: 48px;
-  margin-bottom: 16px;
-  background-image: url('../images/sound-waves.svg');
-  background-size: cover;
+  &__title {
+    margin: 0;
 
-  @include onTablet {
-width: 64px;
-height: 76px;
-margin-bottom: 40px;
+    font-family: $main-font;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: 0;
+
+    @include on-tablet {
+      font-size: 40px;
+    }
+
+    @include on-desktop {
+      font-size: 56px;
+
+      transform: translateX(-120px) scaleX(1.3);
+      transform-origin: left;
+    }
   }
-  @include onDesktop {
-width: 32px;
-}
 
-&__title {
-  margin: 0;
-  font-style: italic;
-  font-weight: 800;
-  font-size: 32px;
-  line-height: 100%;
-  letter-spacing: -1.5px;
+  &__bottom {
+    padding-bottom: 40px;
+    @include content-padding-inline;
 
-  @include onTablet {
-    font-size: 40px;
+    @include on-tablet {
+      padding-bottom: 64px;
+    }
+
+    @include on-desktop {
+      padding-left: 240px;
+      padding-bottom: 100px;
+    }
   }
-}
-
-&__bottom {
-  padding-bottom: 40px;
-  @include contentPaddingInLine;
-
-  @include onTablet {
-    padding-bottom: 64px;
-  }
-}
-
-}
 }

@@ -1,0 +1,57 @@
+.about-us {
+  @include page-grid;
+
+  &__image-wrapper {
+    width: 100vw;
+    height: 100%;
+
+    margin-left: calc(50% - 50vw);
+    overflow: hidden;
+  }
+
+  &__image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 4 / 7;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__benefits {
+    width: 498px;
+    min-height: 269px;
+
+    @include regular-text;
+  }
+
+  &__description {
+    margin: 0;
+    line-height: 27px;
+  }
+}
